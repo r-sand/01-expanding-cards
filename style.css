@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  width: 99vw;
+}
+
+/* background images */
+.panel:nth-of-type(1) {
+  background-image: url('./assets/david-edelstein-N4DbvTUDikw-unsplash.jpg');
+}
+.panel:nth-of-type(2) {
+  background-image: url('./assets/sora-sagano-UtJcj7_2zRs-unsplash.jpg');
+}
+.panel:nth-of-type(3) {
+  background-image: url('./assets/sora-sagano-8sOZJ8JF0S8-unsplash.jpg');
+}
+.panel:nth-of-type(4) {
+  background-image: url('./assets/mirko-blicke-VCRci_usn0w-unsplash.jpg');
+}
+.panel:nth-of-type(5) {
+  background-image: url('./assets/ju-on-_zZrmWCGdsg-unsplash.jpg');
+}
+
+.panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 98vh;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 5px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.2s ease-in 0.6s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+
+  .panel.active {
+    flex: 2.5;
+  }
+}
